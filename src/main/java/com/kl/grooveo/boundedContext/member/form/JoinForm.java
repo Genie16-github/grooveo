@@ -10,29 +10,29 @@ import lombok.Getter;
 @AllArgsConstructor
 public class JoinForm {
 
-    @NotBlank
-    @Size(min = 3, max = 30)
-    private String username;
+	@NotBlank
+	@Size(min = 3, max = 30)
+	private String username;
 
-    @NotBlank
-    @Size(min = 3, max = 30)
-    private String password;
+	@NotBlank
+	@Size(min = 3, max = 30)
+	private String password;
 
-    @NotBlank
-    @Size(min = 3, max = 30)
-    private String confirmPassword;
+	@NotBlank
+	@Size(min = 3, max = 30)
+	private String confirmPassword;
 
-    @NotBlank
-    @Size(min = 2, max = 10)
-    private String name;
+	@NotBlank
+	@Size(min = 2, max = 10)
+	private String name;
 
-    @NotBlank
-    @Size(min = 2, max = 10)
-    private String nickName;
+	@NotBlank
+	@Size(min = 2, max = 10)
+	private String nickName;
 
-    @NotBlank
-    @Email
-    @Size(min = 3, max = 30)
-    private String email;
+	@NotBlank
+	@Email
+	@Size(min = 3, max = 30)
+	private String email;
 
 }

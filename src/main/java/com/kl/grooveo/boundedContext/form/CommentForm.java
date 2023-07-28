@@ -7,6 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CommentForm {
-    @NotEmpty(message = "댓글 등록을 하시려면 내용을 입력해주세요.")
-    private String content;
+	@NotEmpty(message = "댓글 등록을 하시려면 내용을 입력해주세요.")
+	private String content;
 }

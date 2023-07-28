@@ -29,7 +29,8 @@
             <tr th:each="fileInfo, loop : ${paging}" class="text-center">
                 <td th:text="${paging.getTotalElements - (paging.number * paging.size) - loop.index}"></td>
                 <td>
-                    <a id="subject" th:href="@{|/library/soundDetail/${fileInfo.id}|}" th:text="${fileInfo.title}" class="whitespace-nowrap overflow-x-hidden overflow-ellipsis">
+                    <a id="subject" th:href="@{|/library/soundDetail/${fileInfo.id}|}" th:text="${fileInfo.title}"
+                       class="whitespace-nowrap overflow-x-hidden overflow-ellipsis">
                     </a>
                 </td>
                 <td>

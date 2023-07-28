@@ -1,5 +1,5 @@
 server:
-  port: 8080 # 포트번호 8080
+  port: 8080
 spring:
   profiles:
     active: dev
@@ -7,59 +7,23 @@ spring:
   thymeleaf:
     enabled: true
   mvc:
-    hiddenmethod:      # @DeleteMapping 사용 위해
+    hiddenmethod:
       filter:
         enabled: true
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/grooveo__dev?serverTimezone=Asia/Seoul
-    username: grooveouser
-    password:
   devtools:
-    livereload:        # jps, css 변경 시 새로고침 없이 바로 적용
-      enabled: true    # 필요없으면 false
-    restart:           # 자동 재시작 사용 여부
+    livereload:
+      enabled: true
+    restart:
       enabled: true
   jpa:
     hibernate:
-      ddl-auto: create # DB 테이블 자동생성(엔티티 클래스만 만들면 됨)
+      ddl-auto:
     properties:
       hibernate:
-        show_sql: true            # 하이버네이트가 DB에 날리는 모든 쿼리(DDL, DML)를 보여준다.
-        format_sql: true          # sql 예쁘게 포맷팅
-        use_sql_comments: true    # 추가적인 주석 표시
-  security:
-    oauth2:
-      client:
-        registration:
-          kakao:
-            scope:
-            client-name: Kakao
-            authorization-grant-type: authorization_code
-            redirect-uri: '${custom.site.baseUrl}/{action}/oauth2/code/{registrationId}'
-            client-authentication-method: POST
-          google:
-            redirect-uri: '${custom.site.baseUrl}/{action}/oauth2/code/{registrationId}'
-            client-name: Google
-            scope: profile
-        provider:
-          kakao:
-            authorization-uri: https://kauth.kakao.com/oauth/authorize
-            token-uri: https://kauth.kakao.com/oauth/token
-            user-info-uri: https://kapi.kakao.com/v2/user/me
-            user-name-attribute: id
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
   servlet:
-      multipart:
-        max-file-size: 50MB # 요청한 파일 한 개의 크기
-        max-request-size: 50MB # 요청한 파일 전체의 크기
-cloud:
-  aws:
-    s3:
-      bucket:
-    stack:
-      auto: false
-    region:
-      static:
-    credentials:
-      accessKey:
-      secretKey:
+    multipart:
+      max-file-size: 50MB # 요청한 파일 한 개의 크기
+      max-request-size: 50MB # 요청한 파일 전체의 크기

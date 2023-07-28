@@ -27,12 +27,12 @@
             form.submit();
         }
 
-        function changeFn(){
+        function changeFn() {
             const category = document.getElementById("category");
             $('#ct').val(category.options[category.selectedIndex].value);
         }
 
-        window.onload = function() {
+        window.onload = function () {
             $('#ct').val("c2");
         }
 
@@ -44,7 +44,7 @@
 
     <!-- 토스트 UI 에디터 불러오기 시작 -->
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
-    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"/>
     <!-- 토스트 UI 에디터 불러오기 끝 -->
 
 </head>
@@ -54,7 +54,8 @@
 <main layout:fragment="main">
     <div class="flex flex-col align-center mx-auto max-w-7xl w-full my-3">
         <span class="text-3xl text-center font-bold mt-8">게시글 등록</span>
-        <form th:action th:object="${freedomPostForm}" method="post" onsubmit="copyEditorContentToTextarea(); PostForm__submit(this); return false;">
+        <form th:action th:object="${freedomPostForm}" method="post"
+              onsubmit="copyEditorContentToTextarea(); PostForm__submit(this); return false;">
             <div class="flex flex-col mt-2">
                 <span class="badge badge-lg rounded-pill badge-neutral my-2">카테고리</span>
                 <select class="select select-bordered select-sm w-full max-w-xs" id="category" onchange="changeFn()">

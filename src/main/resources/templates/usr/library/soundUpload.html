@@ -87,7 +87,8 @@
 <body>
 <main layout:fragment="main">
     <div class="flex h-full justify-center items-center">
-        <form th:action th:object="${soundTrackForm}" method="POST" class="flex flex-col gap-6" enctype="multipart/form-data" onsubmit="PostForm__submit(this); return false;">
+        <form th:action th:object="${soundTrackForm}" method="POST" class="flex flex-col gap-6"
+              enctype="multipart/form-data" onsubmit="PostForm__submit(this); return false;">
             <div class="flex justify-center">
                 <div class="posts-box mt-20">
                     <div class="flex justify-center">
@@ -100,8 +101,12 @@
 
                         <!-- 앨범 커버 등록 -->
                         <div>
-                            <input type="file" id="album-file" accept="image/*" style="display:none;" th:field="*{albumCover}">
-                            <button id="custom-img-button" class="cursor-pointer bg-black bg-opacity-10 h-10 p-2 w-32 text-sm flex items-center justify-center hover:bg-opacity-30 mb-5">Upload AlbumCover</button>
+                            <input type="file" id="album-file" accept="image/*" style="display:none;"
+                                   th:field="*{albumCover}">
+                            <button id="custom-img-button"
+                                    class="cursor-pointer bg-black bg-opacity-10 h-10 p-2 w-32 text-sm flex items-center justify-center hover:bg-opacity-30 mb-5">
+                                Upload AlbumCover
+                            </button>
                             <div class="w-52 h-52 border border-black border-opacity-10 flex items-end justify-center">
                                 <div id="image-preview"></div>
                             </div>
@@ -111,9 +116,15 @@
                         <div class="flex flex-col ml-4">
                             <!-- 음원 등록 버튼-->
                             <div class="file-upload-container flex items-center">
-                                <input type="file" id="sound-file" accept="audio/*" style="display:none;" th:field="*{soundFile}">
-                                <button id="custom-button" class="cursor-pointer bg-black bg-opacity-10 h-10 p-4 w-32 text-sm flex items-center justify-center hover:bg-opacity-30">Upload Sound</button>
-                                <span id="file-name" class="w-64 h-10 border border-black border-opacity-10 p-4 text-sm block" style="display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 7px; text-align: center;">선택된 파일 없음</span>
+                                <input type="file" id="sound-file" accept="audio/*" style="display:none;"
+                                       th:field="*{soundFile}">
+                                <button id="custom-button"
+                                        class="cursor-pointer bg-black bg-opacity-10 h-10 p-4 w-32 text-sm flex items-center justify-center hover:bg-opacity-30">
+                                    Upload Sound
+                                </button>
+                                <span id="file-name"
+                                      class="w-64 h-10 border border-black border-opacity-10 p-4 text-sm block"
+                                      style="display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 7px; text-align: center;">선택된 파일 없음</span>
                             </div>
 
                             <!-- 제목 -->
@@ -123,7 +134,7 @@
                             <!-- 제목 입력 -->
                             <div class="flex mt-2">
                                 <input id="id-input" type="text" th:field="*{title}" placeholder="제목을 입력하세요"
-                                       class="border border-black border-opacity-10 h-10 p-4 w-96" />
+                                       class="border border-black border-opacity-10 h-10 p-4 w-96"/>
                             </div>
 
                             <!-- 설명 -->
@@ -133,7 +144,8 @@
                             <!-- 설명 입력 -->
                             <div class="flex mt-2">
                                 <textarea cols="45" rows="15" th:field="*{description}"
-                                          placeholder="설명을 입력하세요" class="border border-black border-opacity-10 resize-none p-4 mr-5 focus:outline-none"></textarea>
+                                          placeholder="설명을 입력하세요"
+                                          class="border border-black border-opacity-10 resize-none p-4 mr-5 focus:outline-none"></textarea>
                             </div>
                         </div>
                     </div>
@@ -142,7 +154,8 @@
                     <div class="flex justify-end">
                         <div class="submit-button flex justify-end">
                             <div class="flex mt-6">
-                                <button type="submit" class="h-10 p-4 w-32 text-sm flex items-center justify-center mr-5">
+                                <button type="submit"
+                                        class="h-10 p-4 w-32 text-sm flex items-center justify-center mr-5">
                                     <span class="text-center">등록</span>
                                 </button>
                             </div>
@@ -153,46 +166,46 @@
         </form>
     </div>
     <script>
-            // 음원 선택 버튼 클릭 이벤트
-            document.getElementById("custom-button").addEventListener("click", function (event) {
-                event.preventDefault();
-                document.getElementById("sound-file").click();
-            });
+        // 음원 선택 버튼 클릭 이벤트
+        document.getElementById("custom-button").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("sound-file").click();
+        });
 
-                // 음원 파일이 선택되면 파일 이름 표시
-                document.getElementById("sound-file").addEventListener("change", function () {
-                if (this.files && this.files[0]) {
+        // 음원 파일이 선택되면 파일 이름 표시
+        document.getElementById("sound-file").addEventListener("change", function () {
+            if (this.files && this.files[0]) {
                 document.getElementById("file-name").textContent = this.files[0].name;
             } else {
                 document.getElementById("file-name").textContent = "선택된 파일 없음";
             }
-            });
+        });
 
-                // 이미지 선택 버튼 클릭 이벤트
-            document
-                .getElementById("custom-img-button")
-                .addEventListener("click", function (event) {
-                    // 기본 이벤트(폼 제출 등) 방지
-                    event.preventDefault();
+        // 이미지 선택 버튼 클릭 이벤트
+        document
+            .getElementById("custom-img-button")
+            .addEventListener("click", function (event) {
+                // 기본 이벤트(폼 제출 등) 방지
+                event.preventDefault();
                 document.getElementById("album-file").click();
             });
 
-            // 이미지 파일 선택 후 미리보기 표시
-            document.getElementById("album-file").addEventListener("change", function () {
-                if (this.files && this.files[0]) {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        var imageContainer = document.createElement("img");
-                        imageContainer.setAttribute("src", e.target.result);
-                        imageContainer.style.width = "100%";
-                        imageContainer.style.height = "100%";
-                        var container = document.querySelector(".w-52");
-                        container.innerHTML = "";
-                        container.appendChild(imageContainer);
-                    };
-                    reader.readAsDataURL(this.files[0]);
-                }
-            });
+        // 이미지 파일 선택 후 미리보기 표시
+        document.getElementById("album-file").addEventListener("change", function () {
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var imageContainer = document.createElement("img");
+                    imageContainer.setAttribute("src", e.target.result);
+                    imageContainer.style.width = "100%";
+                    imageContainer.style.height = "100%";
+                    var container = document.querySelector(".w-52");
+                    container.innerHTML = "";
+                    container.appendChild(imageContainer);
+                };
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
     </script>
 </main>
 </body>

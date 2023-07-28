@@ -48,14 +48,16 @@
     <div class="flex justify-center mx-auto max-w-7xl my-3">
 
         <div class="posts-box mt-8 w-full mx-10">
-            <div class="flex justify-center" style="word-break: break-word; overflow-wrap: break-word; white-space: normal;">
+            <div class="flex justify-center"
+                 style="word-break: break-word; overflow-wrap: break-word; white-space: normal;">
                 <span class="text-3xl font-bold" th:text="${freedomPost.title}"></span>
             </div>
 
             <!-- 작성자 부분 -->
             <div class="flex mt-7 justify-between border-b border-gray-400">
                 <div class="flex justify-start items-center">
-                    <img th:src="${freedomPost.getAuthor().getProfileImageUrl()}" alt="" class="w-11 h-11 object-cover m-3 rounded-full border-2 border-gray-100">
+                    <img th:src="${freedomPost.getAuthor().getProfileImageUrl()}" alt=""
+                         class="w-11 h-11 object-cover m-3 rounded-full border-2 border-gray-100">
                     <div>
                         <div class="flex items-center mb-1">
                             <span class="font-bold" th:text="${freedomPost.getAuthor().nickName}"></span>
@@ -65,7 +67,9 @@
                         </div>
 
                         <div class="flex">
-                            <div class="text-gray-500 text-xs mr-2"><span th:text="${#temporals.format(freedomPost.createDate, 'yyyy.MM.dd HH:mm')}"></span></div>
+                            <div class="text-gray-500 text-xs mr-2"><span
+                                    th:text="${#temporals.format(freedomPost.createDate, 'yyyy.MM.dd HH:mm')}"></span>
+                            </div>
                             <div class="text-xs mr-1">조회수</div>
                             <div class="text-xs"><span id="viewCnt"></span></div>
                         </div>
@@ -81,7 +85,8 @@
             </div>
 
             <!-- 게시글 내용 -->
-            <div class="m-4" style="word-break: break-word; overflow-wrap: break-word; white-space: normal;" th:utext="${freedomPost.content}"></div>
+            <div class="m-4" style="word-break: break-word; overflow-wrap: break-word; white-space: normal;"
+                 th:utext="${freedomPost.content}"></div>
 
             <!-- 수정/삭제 버튼 -->
             <div class="flex justify-end mt-6">
@@ -106,7 +111,8 @@
                     <div class="text-gray-600 ml-2">
                         COMMENT
                     </div>
-                    <div class="text-gray-600 ml-3"><span th:text="${#lists.size(freedomPost.commentList)}"></span></div>
+                    <div class="text-gray-600 ml-3"><span th:text="${#lists.size(freedomPost.commentList)}"></span>
+                    </div>
                     <div class="flex-grow"></div>
                     <div class="flex-shrink-0">
                         <a id="so_btn1" class="so-link hover:underline mr-3 text-xs" style="cursor: pointer"
@@ -124,7 +130,8 @@
                     <!-- 댓글 리스트 -->
                     <div class="flex my-3 w-full">
                         <div class="w-11 h-full mr-1">
-                            <img th:src="${comment.getAuthor().getProfileImageUrl()}" alt="" class="w-9 h-9 object-cover rounded-full border-2">
+                            <img th:src="${comment.getAuthor().getProfileImageUrl()}" alt=""
+                                 class="w-9 h-9 object-cover rounded-full border-2">
                         </div>
                         <div class="w-full">
                             <div class="flex items-center mb-1">
@@ -138,8 +145,12 @@
                                 </div>
                             </div>
                             <div class="flex">
-                                <div class="text-gray-500 text-xs mr-2"><p th:text="${#temporals.format(comment.createDate, 'yyyy.MM.dd HH:mm')}"></p></div>
-                                <a href="javascript:void(0);" class="comment-answer reply-link text-xs mr-1 hover:underline" th:data-num="${comment.id}">
+                                <div class="text-gray-500 text-xs mr-2"><p
+                                        th:text="${#temporals.format(comment.createDate, 'yyyy.MM.dd HH:mm')}"></p>
+                                </div>
+                                <a href="javascript:void(0);"
+                                   class="comment-answer reply-link text-xs mr-1 hover:underline"
+                                   th:data-num="${comment.id}">
                                     답글 쓰기
                                 </a>
                                 <p class="text-red-500 text-xs mr-2" th:text="|[${comment.replyList.size()}]|"></p>
@@ -161,13 +172,15 @@
 
                         <!-- 답글 창-->
                         <div class="list-group">
-                            <div th:each="i: ${#numbers.sequence(0, comment.getReplyList().size()-1, 1)}" class="comment-item list-group-item" th:with="reply=${comment.getReplyList().get(i)}">
+                            <div th:each="i: ${#numbers.sequence(0, comment.getReplyList().size()-1, 1)}"
+                                 class="comment-item list-group-item" th:with="reply=${comment.getReplyList().get(i)}">
                                 <a th:id="|reply-${comment.id}|"></a>
                                 <div>
                                     <!-- 답글 리스트 -->
                                     <div class="flex my-3 w-full">
                                         <div class="w-11 h-full mr-1">
-                                            <img th:src="${reply.getAuthor().getProfileImageUrl()}" alt="" class="w-9 h-9 object-cover rounded-full border-2">
+                                            <img th:src="${reply.getAuthor().getProfileImageUrl()}" alt=""
+                                                 class="w-9 h-9 object-cover rounded-full border-2">
                                         </div>
                                         <div class="w-full">
                                             <div class="flex items-center mb-1">
@@ -181,7 +194,9 @@
                                                 </div>
                                             </div>
                                             <div class="flex">
-                                                <div class="text-gray-500 text-xs mr-2"><p th:text="${#temporals.format(reply.createDate, 'yyyy.MM.dd HH:mm')}"></p></div>
+                                                <div class="text-gray-500 text-xs mr-2"><p
+                                                        th:text="${#temporals.format(reply.createDate, 'yyyy.MM.dd HH:mm')}"></p>
+                                                </div>
                                                 <a href="javascript:void(0);" class="text-xs mr-1 hover:underline"
                                                    th:if="${reply.author != null and #authentication.getPrincipal().getUsername() == reply.author.username}"
                                                    onclick="if ( confirm('정말로 삭제하시겠습니까?') ) $(this).next().submit();">
@@ -199,13 +214,18 @@
                         <!-- 답글 등록 창-->
                         <div class="form-floating comment_box">
                             <form th:action="@{|/reply/create/${comment.id}?commentPage=${commentPaging.number}&so=${so}|}"
-                                  th:object="${replyForm}" method="post" onsubmit="replyForm__submit(this); return false;"
+                                  th:object="${replyForm}" method="post"
+                                  onsubmit="replyForm__submit(this); return false;"
                                   class="my-3">
                                 <div class="flex items-center justify-center">
-                                    <textarea class="border border-gray-300 resize-none p-4 mr-5" placeholder="답글을 남겨보세요"
+                                    <textarea class="border border-gray-300 resize-none p-4 mr-5"
+                                              placeholder="답글을 남겨보세요"
                                               th:field="*{content}" cols="90" rows="2"></textarea>
                                     <input type="hidden" name="commentPage" th:value="${commentPaging.number}">
-                                    <button type="submit" value="등록" class="bg-black bg-opacity-10 h-7 p-4 w-20 text-sm flex items-center justify-center hover:bg-opacity-30">등록</button>
+                                    <button type="submit" value="등록"
+                                            class="bg-black bg-opacity-10 h-7 p-4 w-20 text-sm flex items-center justify-center hover:bg-opacity-30">
+                                        등록
+                                    </button>
                                 </div>
                             </form>
                         </div>
@@ -215,7 +235,8 @@
                 <!-- 페이징처리 시작 -->
                 <div th:if="${!commentPaging.isEmpty()}" class="flex justify-center mt-2">
                     <div class="btn-group pagination">
-                        <a class="page-link btn btn-sm btn-outline" th:disabled="${!commentPaging.hasPrevious} ? 'disabled'"
+                        <a class="page-link btn btn-sm btn-outline"
+                           th:disabled="${!commentPaging.hasPrevious} ? 'disabled'"
                            href="javascript:void(0)" th:data-page="${(commentPaging.number)-1}">
                             <span>이전</span>
                         </a>
@@ -239,11 +260,16 @@
                 </form>
 
                 <!-- 댓글 입력칸 -->
-                <form th:action="@{|/comment/create/${freedomPost.id}?commentPage=${commentPaging.number}&so=${so}|}" th:object="${commentForm}" method="post" onsubmit="commentForm__submit(this); return false;">
+                <form th:action="@{|/comment/create/${freedomPost.id}?commentPage=${commentPaging.number}&so=${so}|}"
+                      th:object="${commentForm}" method="post" onsubmit="commentForm__submit(this); return false;">
                     <div class="flex items-center justify-center">
-                        <textarea cols="95" rows="2" placeholder="댓글을 남겨보세요" class="border border-gray-300 resize-none p-4 mr-5" th:field="*{content}"></textarea>
+                        <textarea cols="95" rows="2" placeholder="댓글을 남겨보세요"
+                                  class="border border-gray-300 resize-none p-4 mr-5" th:field="*{content}"></textarea>
                         <input type="hidden" name="commentPage" th:value="${commentPaging.number}">
-                        <button type="submit" value="등록" class="bg-black bg-opacity-10 h-7 p-4 w-20 text-sm flex items-center justify-center hover:bg-opacity-30">등록</button>
+                        <button type="submit" value="등록"
+                                class="bg-black bg-opacity-10 h-7 p-4 w-20 text-sm flex items-center justify-center hover:bg-opacity-30">
+                            등록
+                        </button>
                     </div>
                 </form>
             </div>
@@ -269,7 +295,7 @@
 
         if (window.location.hash && window.location.hash.indexOf("#reply-") !== -1) {
             const commentId = window.location.hash.replace("#reply-", "");
-            $(function(){
+            $(function () {
                 document.getElementsByClassName("cm_" + commentId)[0].style.display = "block";
             });
         }

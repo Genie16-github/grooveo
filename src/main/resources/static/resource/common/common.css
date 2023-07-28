@@ -13,7 +13,7 @@ html > body {
 }
 
 body {
-    padding-top:var(--top-bar__height);
+    padding-top: var(--top-bar__height);
 }
 
 html > body .label-text {
@@ -30,48 +30,48 @@ div {
 }
 
 :root {
-    --site-width:1280px;
-    --top-bar__height:64px;
+    --site-width: 1280px;
+    --top-bar__height: 64px;
 }
 
 /* 탑바 */
 .top-bar {
-    --color:white;
-    --inverse-color:black;
-    height:var(--top-bar__height);
-    color:var(--color);
-    position:fixed;
+    --color: white;
+    --inverse-color: black;
+    height: var(--top-bar__height);
+    color: var(--color);
+    position: fixed;
     z-index: 999;
-    top:0px;
-    left:0px;
-    width:100%
+    top: 0px;
+    left: 0px;
+    width: 100%
 }
 
 .top-bar.hover {
-    --color:black;
-    --inverse-color:white;
-    background-color:var(--inverse-color);
+    --color: black;
+    --inverse-color: white;
+    background-color: var(--inverse-color);
 }
 
 /* 메뉴 1 */
 .menu-1__li-icon > a > span {
-    font-size:20px;
+    font-size: 20px;
 }
 
 .menu-1 > li:not(.menu-1__li-icon) > a > span {
-    font-size:14px;
+    font-size: 14px;
 }
 
 .menu-1__li-join > a > span {
-    background-color:var(--color, white);
-    color:var(--inverse-color, black);
-    padding:12px 12px 7px 12px;
-    margin-bottom:5px;
-    border-radius:20px;
+    background-color: var(--color, white);
+    color: var(--inverse-color, black);
+    padding: 12px 12px 7px 12px;
+    margin-bottom: 5px;
+    border-radius: 20px;
 }
 
 .menu-1 > li:hover > a > span {
-    text-decoration:underline;
+    text-decoration: underline;
 }
 
 .dropdown-content {
@@ -106,6 +106,6 @@ div {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
- .search-Button:hover {
-     cursor: pointer;
- }
+.search-Button:hover {
+    cursor: pointer;
+}

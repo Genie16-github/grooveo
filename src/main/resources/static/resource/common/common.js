@@ -46,13 +46,12 @@ function toastWarning(msg) {
 }
 
 function TopBar__init() {
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         let scrollTop = $(window).scrollTop();
 
-        if ( scrollTop == 0) {
+        if (scrollTop == 0) {
             $('.top-bar').removeClass('hover');
-        }
-        else {
+        } else {
             $('.top-bar').addClass('hover');
         }
     });

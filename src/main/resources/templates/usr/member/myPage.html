@@ -136,7 +136,8 @@
                                   class="text-xs text-gray-500 whitespace-nowrap overflow-x-hidden overflow-ellipsis"></span>
                         </div>
                         <button class="bg-black bg-opacity-10 h-10 p-4 w-16 text-sm flex items-center justify-center hover:bg-opacity-30"
-                                type="button" th:data-username="${follower.follower.username}" onclick="delete_follow(this)">
+                                type="button" th:data-username="${follower.follower.username}"
+                                onclick="delete_follow(this)">
                             <span th:data-user-text="${follower.follower.username}" class="text-center">삭제</span>
                         </button>
                     </div>
@@ -170,7 +171,8 @@
                                   class="text-xs text-gray-500 whitespace-nowrap overflow-x-hidden overflow-ellipsis"></span>
                         </div>
                         <button class="bg-black bg-opacity-10 h-10 p-4 w-16 text-sm flex items-center justify-center hover:bg-opacity-30"
-                                type="button" th:data-username="${following.following.username}" onclick="delete_following(this)">
+                                type="button" th:data-username="${following.following.username}"
+                                onclick="delete_following(this)">
                             <span class="text-center">삭제</span>
                         </button>
                     </div>

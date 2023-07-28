@@ -30,10 +30,14 @@
                                    class="fa-solid fa-fire text-red-500 ml-2"></i>
                                 <div class="flex flex-grow justify-end">
                                     <!-- 클릭 시 알림 읽음 처리(눈 아이콘) -->
-                                    <a style="cursor: pointer" class="flex items-center mr-3" th:if="${notification.readDate == null}" th:data-id="${notification.id}" onclick="EyeIconClick(this)">
+                                    <a style="cursor: pointer" class="flex items-center mr-3"
+                                       th:if="${notification.readDate == null}" th:data-id="${notification.id}"
+                                       onclick="EyeIconClick(this)">
                                         <i class="fa-solid fa-eye"></i>
                                     </a>
-                                    <a style="cursor: pointer" class="flex items-center mr-3" th:if="${notification.readDate != null}" th:data-id="${notification.id}" onclick="EyeIconClick(this)">
+                                    <a style="cursor: pointer" class="flex items-center mr-3"
+                                       th:if="${notification.readDate != null}" th:data-id="${notification.id}"
+                                       onclick="EyeIconClick(this)">
                                         <i class="fa-regular fa-eye-slash"></i>
                                     </a>
                                 </div>

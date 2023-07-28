@@ -62,3 +62,6 @@ build/bootJarMainClassName
 .idea/
 
 *.iml
+
+# Custom
+src/main/java/com/kl/grooveo/base/initData/NotProd.java

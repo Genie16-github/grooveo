@@ -9,7 +9,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class ModifyNickNameForm {
 
-    @NotBlank
-    @Size(min = 2, max = 10)
-    private String nickName;
+	@NotBlank
+	@Size(min = 2, max = 10)
+	private String nickName;
 }

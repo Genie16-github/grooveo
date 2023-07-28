@@ -9,7 +9,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class FindUsernameForm {
 
-    @NotBlank
-    @Size(min = 4, max = 30)
-    private final String email;
+	@NotBlank
+	@Size(min = 4, max = 30)
+	private final String email;
 }

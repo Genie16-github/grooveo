@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @SpringBootApplication
 public class GrooveoApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(GrooveoApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(GrooveoApplication.class, args);
+	}
 
 }

@@ -9,15 +9,15 @@ import lombok.Getter;
 @AllArgsConstructor
 public class ModifyPasswordForm {
 
-    @NotBlank
-    @Size(min = 3, max = 30)
-    private String previousPassword;
+	@NotBlank
+	@Size(min = 3, max = 30)
+	private String previousPassword;
 
-    @NotBlank
-    @Size(min = 3, max = 30)
-    private String newPassword;
+	@NotBlank
+	@Size(min = 3, max = 30)
+	private String newPassword;
 
-    @NotBlank
-    @Size(min = 3, max = 30)
-    private String confirmNewPassword;
+	@NotBlank
+	@Size(min = 3, max = 30)
+	private String confirmNewPassword;
 }

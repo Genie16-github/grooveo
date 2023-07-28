@@ -1,53 +1,60 @@
-*{
-    margin:0; padding:0;
-    font-size:15px;
-    line-height:1.3;
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    line-height: 1.3;
 }
-ul{list-style:none;}
 
-.tabmenu{
+ul {
+    list-style: none;
+}
+
+.tabmenu {
     margin: 0 auto;
-    position:relative;
-}
-
-.tabmenu ul{
     position: relative;
 }
 
-.tabmenu ul li{
+.tabmenu ul {
+    position: relative;
+}
+
+.tabmenu ul li {
     flex: 1;
-    display:  inline-block;
-    width:33.33%;
-    float:left;
-    text-align:center;
-    background :#f9f9f9;
-    line-height:40px;
+    display: inline-block;
+    width: 33.33%;
+    float: left;
+    text-align: center;
+    background: #f9f9f9;
+    line-height: 40px;
 }
 
-.tabmenu label{
-    display:block;
-    width:100%;
-    height:40px;
-    line-height:40px;
-}
-
-.tabmenu input{display:none;}
-
-.tabCon{
-    display:none;
+.tabmenu label {
+    display: block;
     width: 100%;
-    text-align:left;
+    height: 40px;
+    line-height: 40px;
+}
+
+.tabmenu input {
+    display: none;
+}
+
+.tabCon {
+    display: none;
+    width: 100%;
+    text-align: left;
     padding: 20px;
-    position:absolute;
-    left:0; top:40px;
+    position: absolute;
+    left: 0;
+    top: 40px;
     box-sizing: border-box;
-    border : 5px solid #f9f9f9;
+    border: 5px solid #f9f9f9;
 }
 
-.tabmenu input:checked ~ label{
-    background:#ccc;
+.tabmenu input:checked ~ label {
+    background: #ccc;
 }
 
-.tabmenu input:checked ~ .tabCon{
-    display:block;
+.tabmenu input:checked ~ .tabCon {
+    display: block;
 }

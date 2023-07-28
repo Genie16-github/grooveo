@@ -10,9 +10,9 @@ import lombok.Getter;
 @AllArgsConstructor
 public class ModifyEmailForm {
 
-    @NotBlank
-    @Email
-    @Size(min = 3, max = 30)
-    private String email;
+	@NotBlank
+	@Email
+	@Size(min = 3, max = 30)
+	private String email;
 }
 

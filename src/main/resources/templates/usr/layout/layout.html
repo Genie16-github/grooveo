@@ -62,28 +62,30 @@
         </a>
 
         <div class="flex-grow"></div>
-            <div class="flex h-full items-center">
-                <a th:if="${@rq.logout}" class="btn btn-ghost rounded-btn" href="/usr/member/login">로그인</a>
-                <a th:if="${@rq.logout}" class="btn btn-ghost rounded-btn" href="/usr/member/join">가입하기</a>
-                <a th:if="${@rq.login}" class="btn btn-ghost rounded-btn" href="/library/list/1">라이브러리</a>
-                <div th:if="${@rq.login}" class="dropdown">
-                    <label tabindex="0" class="btn btn-ghost rounded-btn">커뮤니티</label>
-                    <ul tabindex="0" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-33 mt-4">
-                        <li><a href="/community/freedomPost/1/list" style="color: black;">국외 게시판</a></li>
-                        <li><a href="/community/freedomPost/2/list" style="color: black;">국내 게시판</a></li>
-                    </ul>
-                </div>
-                <a th:if="${@rq.login}" class="btn btn-ghost rounded-btn" href="/usr/member/myPage/library">내 정보</a>
-                <a th:if="${@rq.login}" class="btn btn-ghost rounded-btn" href="javascript:" onclick="$(this).next().submit();">로그아웃</a>
-                <form class="!hidden" hidden th:action="|/usr/member/logout|" method="POST"></form>
-                <a id="openModalButton1" class="btn btn-ghost btn-circle" th:if="${@rq.login}">
-                    <div class="indicator" style="position: relative;">
-                        <i class="fa-regular fa-bell">
+        <div class="flex h-full items-center">
+            <a th:if="${@rq.logout}" class="btn btn-ghost rounded-btn" href="/usr/member/login">로그인</a>
+            <a th:if="${@rq.logout}" class="btn btn-ghost rounded-btn" href="/usr/member/join">가입하기</a>
+            <a th:if="${@rq.login}" class="btn btn-ghost rounded-btn" href="/library/list/1">라이브러리</a>
+            <div th:if="${@rq.login}" class="dropdown">
+                <label tabindex="0" class="btn btn-ghost rounded-btn">커뮤니티</label>
+                <ul tabindex="0" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-33 mt-4">
+                    <li><a href="/community/freedomPost/1/list" style="color: black;">국외 게시판</a></li>
+                    <li><a href="/community/freedomPost/2/list" style="color: black;">국내 게시판</a></li>
+                </ul>
+            </div>
+            <a th:if="${@rq.login}" class="btn btn-ghost rounded-btn" href="/usr/member/myPage/library">내 정보</a>
+            <a th:if="${@rq.login}" class="btn btn-ghost rounded-btn" href="javascript:"
+               onclick="$(this).next().submit();">로그아웃</a>
+            <form class="!hidden" hidden th:action="|/usr/member/logout|" method="POST"></form>
+            <a id="openModalButton1" class="btn btn-ghost btn-circle" th:if="${@rq.login}">
+                <div class="indicator" style="position: relative;">
+                    <i class="fa-regular fa-bell">
                             <span data-test="hasUnreadNotifications" th:if="${@rq.hasUnreadNotifications()}"
-                                  class="badge badge-xs badge-secondary indicator-item" style="position: absolute; top: -5px; right: -5px;"></span>
-                        </i>
-                    </div>
-                </a>
+                                  class="badge badge-xs badge-secondary indicator-item"
+                                  style="position: absolute; top: -5px; right: -5px;"></span>
+                    </i>
+                </div>
+            </a>
         </div>
     </div>
 </header>
